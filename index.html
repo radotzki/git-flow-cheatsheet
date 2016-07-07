@@ -285,7 +285,7 @@
             node build-scripts/bump-version.js RELEASE-NUMBER
         </blockquote>
         <blockquote>
-            git commit -am "bump version to RELEASE-NUMBER"
+            git commit -am "bump version"
         </blockquote>
         <p class="divider">&#9733; &#9733; &#9733;</p>
         <p>It's wise to publish the release branch after creating it to allow release commits by other developers. Do it similar to feature publishing with the command:</p>
@@ -318,8 +318,7 @@
         </blockquote>
         <blockquote>
             git checkout master<br>
-            git push<br>
-            git push --tags
+            git push
         </blockquote>
         <blockquote>
             git push origin --delete release/RELEASE-NUMBER
@@ -349,9 +348,24 @@
             git flow hotfix start VERSION [BASENAME]
         </blockquote>
         <p>The version argument hereby marks the new hotfix release name. Optionally you can specify a basename to start from.</p>
+        <p>[BASENAME] should equal something like tags/WAP-1.0.0</p>
     </div>
     <div class="col-2">
         <div class="hotfix-start"></div>
+    </div>
+</div>
+
+<div class="scrollblock">
+    <div class="col-1">
+        <h3>Publish a hotfix</h3>
+
+        <p>Publish a hotfix to the remote server so it can be used by other users.</p>
+        <blockquote>
+            git flow hotfix publish VERSION
+        </blockquote>
+    </div>
+    <div class="col-2">
+        <div class="hotfix-end"></div>
     </div>
 </div>
 
