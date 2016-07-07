@@ -199,6 +199,24 @@
 
 <div class="scrollblock">
     <div class="col-1">
+        <h3>Publish a feature</h3>
+
+        <p>
+            Are you developing a feature in collaboration? <br/>
+            Publish a feature to the remote server so it can be used by other users.
+        </p>
+
+        <blockquote>
+            git flow feature publish MYFEATURE
+        </blockquote>
+    </div>
+    <div class="col-2">
+        <div class="feature-publish"></div>
+    </div>
+</div>
+
+<div class="scrollblock">
+    <div class="col-1">
         <h3>Finish up a feature</h3>
 
         <p>
@@ -220,24 +238,6 @@
     </div>
     <div class="col-2">
         <div class="feature-end"></div>
-    </div>
-</div>
-
-<div class="scrollblock">
-    <div class="col-1">
-        <h3>Publish a feature</h3>
-
-        <p>
-            Are you developing a feature in collaboration? <br/>
-            Publish a feature to the remote server so it can be used by other users.
-        </p>
-
-        <blockquote>
-            git flow feature publish MYFEATURE
-        </blockquote>
-    </div>
-    <div class="col-2">
-        <div class="feature-publish"></div>
     </div>
 </div>
 
@@ -274,17 +274,23 @@
 
         <p>To start a release, use the git flow release command. It creates a release branch created from the 'develop' branch.</p>
         <blockquote>
-            git flow release start RELEASE [BASE]
+            git flow release start RELEASE-NUMBER [BASE]
         </blockquote>
         <p>You can optionally supply a <code>[BASE]</code> commit sha-1 hash to start the release from. The commit must
             be on the
             'develop' branch.</p>
+        <p>Bump the version number (in our package.json)</p>
+        <blockquote>
+            node build-scripts/bump-version.js RELEASE-NUMBER
+            git commit -am "bump version to RELEASE-NUMBER"
+            git push origin develop
+        </blockquote>
         <p class="divider">&#9733; &#9733; &#9733;</p>
         <p>It's wise to publish the release branch after creating it to allow release commits by other developers. Do it similar to feature publishing with the command:</p>
         <blockquote>
-            git flow release publish RELEASE
+            git flow release publish RELEASE-NUMBER
         </blockquote>
-        <p>(You can track a remote release with the <br/><code>git flow release track RELEASE</code> command)</p>
+        <p>(You can track a remote release with the <br/><code>git flow release track RELEASE-NUMBER</code> command)</p>
     </div>
     <div class="col-2">
         <div class="release-start"></div>
@@ -303,7 +309,7 @@
             <li>Removes the release branch</li>
         </ul>
         <blockquote>
-            git flow release finish RELEASE
+            git flow release finish RELEASE-NUMBER
         </blockquote>
         <p>Don't forget to push your tags with<code>git push --tags</code></p>
 
