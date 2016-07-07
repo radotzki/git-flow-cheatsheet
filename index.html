@@ -361,7 +361,7 @@
 
         <p>Publish a hotfix to the remote server so it can be used by other users.</p>
         <blockquote>
-            git flow hotfix publish VERSION
+            git flow-hotfix-publish VERSION
         </blockquote>
     </div>
     <div class="col-2">
@@ -376,6 +376,14 @@
         <p>By finishing a hotfix it gets merged back into develop and master. Additionally the master merge is tagged with the hotfix version.</p>
         <blockquote>
             git flow hotfix finish VERSION
+        </blockquote>
+        <blockquote>
+            git push <br>
+            git checkout develop <br>
+            git push <br>
+        </blockquote>
+        <blockquote>
+            git push origin --delete hotfix/VERSION
         </blockquote>
     </div>
     <div class="col-2">
