@@ -355,6 +355,13 @@
         </blockquote>
         <p>The version argument hereby marks the new hotfix release name. Optionally you can specify a basename to start from.</p>
         <p>[BASENAME] should equal something like tags/WAP-1.0.0</p>
+        <p>Bump the version number (in our package.json)</p>
+        <blockquote>
+            node build-scripts/bump-version.js VERSION
+        </blockquote>
+        <blockquote>
+            git commit -am "bump version"
+        </blockquote>
     </div>
     <div class="col-2">
         <div class="hotfix-start"></div>
